@@ -11,5 +11,5 @@ sass_dir = "/Content/sass" # update to the path of your sass files.
 images_dir = "/Content/Images" # update to the path of your image files.
 javascripts_dir = "/Content/Scripts" # update to the path of your script files.
 
-line_comments = false # if debugging (using chrome extension - set this to true)
+line_comments = true # if debugging (using chrome extension - set this to true)
 cache = true

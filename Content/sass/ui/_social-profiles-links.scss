@@ -3,6 +3,7 @@
     @extend .pull-right;
     li { 
         position: relative;
+        font-size: $font-size-large;
         &:hover {
             color: $link-hover-color;
         }

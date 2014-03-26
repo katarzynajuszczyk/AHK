@@ -4,6 +4,15 @@
        top: 8px;
        left:0;
        right: 74px; // width of the toggle button
-       bottom: 8px;
+       height: 34px;
    }
+  .btn {
+      width: 40px;
+       @include respond-to(mobile) {
+           position:absolute;
+           top: 0;
+           bottom:0;
+           right: 0; // width of the toggle button
+       }          
+  }
 }

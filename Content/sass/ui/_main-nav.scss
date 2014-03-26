@@ -1,1 +1,21 @@
 /* main nav */
+
+.main-nav {
+    @include respond-to(desktop-tablet){
+        .navbar-nav {
+            display:table;// lala
+            li {
+                display: table-cell;
+                float: none;
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+    }
+    .navbar-collapse {
+      @include respond-to(mobile) {
+          max-height: 1000px; // default is 340px in bootstrap/_navbar.scss
+          clear:both;
+      }
+    }
+}
