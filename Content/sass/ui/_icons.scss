@@ -1,0 +1,90 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('/Content/fonts/icomoon.eot');
+	src:url('/Content/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/Content/fonts/icomoon.svg#icomoon') format('svg'),
+		url('/Content/fonts/icomoon.woff') format('woff'),
+		url('/Content/fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'icomoon';
+        src: url('/fonts/icomoon.svg#icomoon') format('svg');
+    }
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+%icon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+
+$icons: (
+	facebook "\e600",
+    twitter "\e601",    
+    linkedin "\e602"
+);
+
+$display-icons-preview: true;
+$icons-to-preview: "";
+@each $icon in $icons {
+	.icon-#{nth($icon, 1)}:before {
+		content: "#{nth($icon, 2)}";
+		@extend %icon; 
+	}
+
+	%icon-#{nth($icon, 1)}:before {
+		content: "#{nth($icon, 2)}";
+		@extend %icon; 
+	}
+
+	$icons-to-preview: $icons-to-preview , #{nth($icon, 1)};
+}
+
+/* icons preview stuff */
+@if ($display-icons-preview == true ) {
+	body::before { 
+		content: "#{$icons-to-preview}"; 
+		display: none;
+	}
+}
+
+body::after {
+	content: "#{$display-icons-preview}";
+	display: none;
+}
+
+.icon-preview {
+	i { line-height: 60px;}
+	i:before {
+		font-size: 40px;
+	}
+}

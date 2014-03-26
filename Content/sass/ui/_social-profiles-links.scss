@@ -1,0 +1,20 @@
+.social-profiles-links {
+    @extend .list-inline;
+    @extend .pull-right;
+    li { 
+        position: relative;
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+    a {
+        @extend %hide-text;
+        display: block;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+    }
+}
+

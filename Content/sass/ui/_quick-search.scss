@@ -1,0 +1,9 @@
+.quick-search{
+   @include respond-to(mobile) {
+       position:absolute;
+       top: 8px;
+       left:0;
+       right: 74px; // width of the toggle button
+       bottom: 8px;
+   }
+}

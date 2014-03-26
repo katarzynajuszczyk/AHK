@@ -1,0 +1,17 @@
+.main-header-aside {
+    margin-top: $line-height-computed;
+}
+.main-header-nav {
+    @extend .pull-right;
+    ul {
+        @extend .list-inline;
+    }
+    li:last-child {
+        padding-right:0;
+    }
+}
+
+.main-header-contact-info {
+    @extend .pull-right;
+    margin-left: $gutter;
+}
